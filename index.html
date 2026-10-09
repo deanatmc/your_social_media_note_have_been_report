@@ -445,7 +445,7 @@ function startPhase(i){
   S.ph=i;const ph=PHASES[i];AU.bell();AU.setTempo(i>=7?152:i>=5?140:132);
   S.t=ph.t;S.phT=0;S.arrived=false;S.late=false;S.left=ph.k||0;S.papers=[];S.paperT=2.4;
   S.dest=ph.free?null:(ph.dest==='pick'?pick(['cls8','sci','cls7']):ph.dest);
-  spawnTeacher();
+  if (Math.random() < 0.4) spawnTeacher();
   banner(`${fmt(ph.t)}　${ph.n}`,ph.free?'自由走動。注意同學舉報！':`走到 ${destName()}`);
   hud();
 }
@@ -474,7 +474,7 @@ function update(dt){
   const ph=PHASES[S.ph];S.phT+=dt;
   const nt=Math.min(ph.end,ph.t+Math.floor(S.phT/phaseLimit()*(ph.end-ph.t)));if(nt!==S.t){S.t=nt;hud()}
   // 投訴單
-   S.paperT-=dt;if(S.paperT<=0){S.paperT=rint(4,7);spawnPaper()}
+   S.paperT-=dt;if(S.paperT<=0){S.paperT=rint(8,12);spawnPaper()}
   for(let i=S.papers.length-1;i>=0;i--){const p=S.papers[i];if(p.wait>0){p.wait-=dt;if(p.wait<=0){const dx=P.x-p.x,dy=P.y-p.y,L=Math.hypot(dx,dy)||1;p.vx=dx/L*8;p.vy=dy/L*8}continue}p.x+=p.vx*dt;p.y+=p.vy*dt;p.life-=dt;p.rot+=dt*8;
      if(Math.hypot(p.x-P.x,p.y-P.y)<.62){S.papers.splice(i,1);registerNotice('同學舉報');return openCase(REPORT_EVENTS[Math.max(0,REPORT_ICONS.indexOf(p.icon))],'同學舉報・IG 貼文',()=>{})}
     if(p.life<=0||p.x<0||p.y<0||p.x>MW||p.y>MH)S.papers.splice(i,1)}
