@@ -414,7 +414,7 @@ function spawnTeacher(){
   NPCS.push({type:'teacher',x:p.x,y:p.y,spd:1.8+R()*.35,cool:3.5,tgt:null,stuck:0,detour:0,walk:0});
   S.teachers++;hud();
 }
-const REPORT_ICONS=['🍋','🐘','🐔','💃'];
+const REPORT_ICONS=😍','😮','😒','😂'];
 function spawnPaper(){
   const studentNPCs=NPCS.filter(n=>n.type==='student');
   const src=studentNPCs.length&&R()<.72?pick(studentNPCs):randTile(P,9);
