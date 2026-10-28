@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-Hant-TW"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px "Iansui Web","Iansui-Regular","芫荽",sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>今天也要安心放學｜校園 IG 互動遊戲</title>
+<title>今天也要安心放學｜校園 IG 崩潰遊戲</title>
 <style>
 /* 芫荽體（Iansui），採作者公開專案的網路字型；離線時由系統字體遞補。 */
 @font-face{font-family:"Iansui Web";src:url("https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf") format("truetype");font-style:normal;font-weight:400 900;font-display:swap}
@@ -264,10 +264,10 @@ const SCENES=[
  SC('z1','Z','放學前的選擇','放學前你最後一次拿出手機，看著 IG 的發文欄。',[['先放下手機，回家好好整理心情','safe','你選擇不再把衝突丟到網路上。',10],['發限動寫「算我倒楣」',.55,'對方看到後又想起今天的衝突。',-6],['發文標註對方要求道歉',.84,'公開施壓讓事情再次升溫。',-10]])
 ];
 const REPORT_EVENTS=[
- {id:'reportA',ti:'🍋 檸檬同學舉報',tx:'同學向老師反映：「他在 IG 說有些人很會裝，不就是在酸我？」',ch:[{l:'說清楚原委，願意聽對方感受',r:'老師請雙方找時間談清楚。',d:7},{l:'堅持「沒有指名就不算」',r:'老師提醒你：沒有指名也可能傷人。',d:-6},{l:'再寫一則諷刺限動',r:'對方更加難過，衝突擴大。',d:-12}]},
- {id:'reportB',ti:'🐘 大象同學舉報',tx:'同學拿截圖找老師：「他發的限動讓全班都在猜我。」',ch:[{l:'刪除影射貼文，並主動道歉',r:'你願意為造成的影響負責。',d:9},{l:'只刪文，不處理彼此的誤會',r:'貼文不見了，但關係還需要修復。',d:1},{l:'要求全班不要再提',r:'其他人更好奇發生了什麼。',d:-5}]},
- {id:'reportC',ti:'🐔 小雞同學舉報',tx:'同學向老師說：「他在 IG 用貼圖嘲笑我，大家都看得懂。」',ch:[{l:'承認貼圖可能造成傷害',r:'你開始理解網路上的玩笑不是人人都能接受。',d:8},{l:'說「大家都這樣玩」',r:'老師提醒你尊重每個人的感受。',d:-6},{l:'找朋友一起反駁',r:'雙方朋友也捲進爭執。',d:-10}]},
- {id:'reportD',ti:'💃 舞者同學舉報',tx:'同學說：「他轉發跳舞影片又配上酸言酸語，大家以為在笑我。」',ch:[{l:'停止轉發並尊重對方影像',r:'你選擇避免讓傷害繼續擴散。',d:9},{l:'說「反正不是我拍的」',r:'轉傳者也需要思考影響。',d:-7},{l:'再加一句嘲笑的文字',r:'更多人加入嘲笑。',d:-12}]}
+ {id:'reportA',ti:' 小檬同學舉報',tx:'同學向老師反映：「他在 IG 說有些人很會裝，不就是在酸我？」',ch:[{l:'說清楚原委，願意聽對方感受',r:'老師請雙方找時間談清楚。',d:7},{l:'堅持「沒有指名就不算」',r:'老師提醒你：沒有指名也可能傷人。',d:-6},{l:'再寫一則諷刺限動',r:'對方更加難過，衝突擴大。',d:-12}]},
+ {id:'reportB',ti:' 阿象同學舉報',tx:'同學拿截圖找老師：「他發的限動讓全班都在猜我。」',ch:[{l:'刪除影射貼文，並主動道歉',r:'你願意為造成的影響負責。',d:9},{l:'只刪文，不處理彼此的誤會',r:'貼文不見了，但關係還需要修復。',d:1},{l:'要求全班不要再提',r:'其他人更好奇發生了什麼。',d:-5}]},
+ {id:'reportC',ti:' ??同學舉報',tx:'同學向老師說：「他在 IG 用貼圖嘲笑我，大家都看得懂。」',ch:[{l:'承認貼圖可能造成傷害',r:'你開始理解網路上的玩笑不是人人都能接受。',d:8},{l:'說「大家都這樣玩」',r:'老師提醒你尊重每個人的感受。',d:-6},{l:'找朋友一起反駁',r:'雙方朋友也捲進爭執。',d:-10}]},
+ {id:'reportD',ti:' 小五同學舉報',tx:'同學說：「他轉發跳舞影片又配上酸言酸語，大家以為在笑我。」',ch:[{l:'停止轉發並尊重對方影像',r:'你選擇避免讓傷害繼續擴散。',d:9},{l:'說「反正不是我拍的」',r:'轉傳者也需要思考影響。',d:-7},{l:'再加一句嘲笑的文字',r:'更多人加入嘲笑。',d:-12}]}
 ].map(x=>({...x,kind:'report'}));
 const TEACHER_EVENT={id:'teacherTalk',kind:'teacher',ti:'老師找你談 IG 事件',tx:'老師說：「有同學反映，你在 IG 上的文字讓他感覺被嘲笑。我們已經通知家長，現在想了解你的想法。」',ch:[
  {l:'冷靜說明，也願意理解同學的感受',r:'老師陪你思考怎麼修復關係。',d:8},
